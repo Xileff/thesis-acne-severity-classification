@@ -31,7 +31,7 @@ def preprocess_image(image_path: str, target_size=(224, 224)):
 def classify_image(image_path: str):
   try:
     image = preprocess_image(image_path)
-    model_path = os.path.join("ml-model", "InceptionV3-Dermnet-SMOTE-Minority-LR-0.001-Batch Size 16.h5")
+    model_path = os.path.join("ml-model", "InceptionV3-ACNE04-SMOTE-Minority-LR-0.001-Batch Size 16.h5")
     model = load_model(model_path)
     result = model.predict(image)
     class_labels = ["Mild", "Moderate", "Severe"]
